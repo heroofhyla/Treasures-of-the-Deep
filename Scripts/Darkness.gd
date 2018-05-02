@@ -7,6 +7,7 @@ extends Sprite
 onready var camera = get_node("/root/scene/Submarine/Camera2D")
 onready var submarine = get_node("/root/scene/Submarine")
 var lit = false
+var facing = 1
 func _ready():
 	self.visible = true
 
@@ -19,6 +20,10 @@ func _process(delta):
 			self.texture = load("res://Sprites/darkness.png")
 	
 	modulate.a = 1 - 255.0/ camera.global_position.y
+	
+	if facing != submarine.facing:
+		facing = submarine.facing
+		scale.x = facing
 	
 	#print(camera.global_position.y)
 	pass

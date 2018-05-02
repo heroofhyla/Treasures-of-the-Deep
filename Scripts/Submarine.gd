@@ -72,6 +72,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("toggle_light"):
 		lit = !lit
+		if lit:
+			$AnimationPlayer.play("Lit")
+		else:
+			$AnimationPlayer.play("Unlit")
 	
 	
 	

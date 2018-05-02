@@ -5,7 +5,7 @@
 [ext_resource path="res://Entities/Submarine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilesets/seafloor.tres" type="TileSet" id=4]
 
-[node name="scene" type="Node2D" index="0"]
+[node name="scene" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -15,7 +15,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Submarine" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 120, 80 )
+position = Vector2( 607.693, 388.984 )
 
 [node name="Camera2D" type="Camera2D" parent="Submarine" index="2"]
 
