@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/Darkness.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/skyline.png" type="Texture" id=4]
 
-[node name="Foreground" type="ParallaxBackground" index="0"]
+[node name="Foreground" type="ParallaxBackground"]
 
 layer = 2
 offset = Vector2( 0, 0 )
@@ -45,6 +45,7 @@ _sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index
 
 [node name="darkness" type="Sprite" parent="ParallaxLayer" index="0"]
 
+visible = false
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility", "Z Index" ]

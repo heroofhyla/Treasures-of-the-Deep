@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Echoes of Time.ogg-492dedc3f3a63dcfae6244d2f9f17296.oggstr"
+
+[deps]
+
+source_file="res://Music/Echoes of Time.ogg"
+source_md5="7f83567b8161d7c76dc4bc3d8c108961"
+
+dest_files=[ "res://.import/Echoes of Time.ogg-492dedc3f3a63dcfae6244d2f9f17296.oggstr" ]
+dest_md5="54b64078efed4b4d89f495be1ad0c741"
+
+[params]
+
+loop=true
+loop_offset=0
