@@ -6,6 +6,7 @@ extends CanvasModulate
 
 onready var camera = get_node("/root/scene/Submarine/Camera2D")
 var level = 1
+
 func _ready():
 	self.visible = true
 

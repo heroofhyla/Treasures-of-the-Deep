@@ -69,7 +69,7 @@ __meta__ = {
 
 stream = ExtResource( 3 )
 volume_db = 0.0
-autoplay = true
+autoplay = false
 mix_target = 0
 bus = "Master"
 
@@ -167,7 +167,7 @@ position = Vector2( 565.197, 1273.1 )
 
 [node name="Submarine" parent="." index="27" instance=ExtResource( 5 )]
 
-position = Vector2( 971.986, 269.967 )
+position = Vector2( 536.312, 906.217 )
 
 [node name="Camera2D" type="Camera2D" parent="Submarine" index="2"]
 
@@ -197,5 +197,9 @@ editor_draw_drag_margin = false
 [node name="CanvasModulate" parent="." index="28" instance=ExtResource( 6 )]
 
 [node name="Foreground" parent="." index="29" instance=ExtResource( 7 )]
+
+[node name="Mine24" parent="." index="30" instance=ExtResource( 4 )]
+
+position = Vector2( 55.9328, 78.4334 )
 
 
