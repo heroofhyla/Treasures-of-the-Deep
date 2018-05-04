@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Submarine.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/submarine.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/single-bubble.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/floodlight.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -87,7 +88,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[node name="Submarine" type="KinematicBody2D" index="0"]
+[node name="Submarine" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -147,5 +148,30 @@ playback_speed = 1.0
 anims/Lit = SubResource( 3 )
 anims/Unlit = SubResource( 4 )
 blend_times = [  ]
+
+[node name="Light2D" type="Light2D" parent="." index="4"]
+
+enabled = false
+editor_only = false
+texture = ExtResource( 4 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 0.925781, 0.791864, 0.0687103, 1 )
+energy = 0.6
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = -1
+range_layer_max = 1
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Range" ]
 
 

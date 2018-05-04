@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lit-darkness.png-2f26107fa4ee8171d109d23372ca9d89.stex"
+path="res://.import/circle-light.png-cb7de0cb7b4b4904441d6fc2b48c9249.stex"
 
 [deps]
 
-source_file="res://Sprites/lit-darkness.png"
-source_md5="25a2b110591d4229dd115f7b3901cd4b"
+source_file="res://Sprites/circle-light.png"
+source_md5="033a0ff9ddea3d986679ad9d24037f7d"
 
-dest_files=[ "res://.import/lit-darkness.png-2f26107fa4ee8171d109d23372ca9d89.stex" ]
-dest_md5="1e58c58ad97422f18daf960213908542"
+dest_files=[ "res://.import/circle-light.png-cb7de0cb7b4b4904441d6fc2b48c9249.stex" ]
+dest_md5="d72bb5c1e080397ada7dce7d66c4cb49"
 
 [params]
 

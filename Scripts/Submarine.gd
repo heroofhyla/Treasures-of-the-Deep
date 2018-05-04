@@ -54,6 +54,7 @@ func _physics_process(delta):
 			facing = input.x
 			$Sprite.scale.x = facing
 			$Particles2D.position.x *= -1
+			$Light2D.scale.x *= -1
 		
 	input = input.normalized() * (ACCEL * delta)
 	velocity += input
@@ -71,6 +72,7 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("toggle_light"):
+		$Light2D.enabled = !($Light2D.enabled)
 		lit = !lit
 		if lit:
 			$AnimationPlayer.play("Lit")
