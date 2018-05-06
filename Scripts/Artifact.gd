@@ -1,5 +1,5 @@
 extends Area2D
-
+export var unlocks = "Ping"
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -19,6 +19,7 @@ func _ready():
 func _on_Artifact_body_entered(body):
 	if body.name == "Submarine" && active:
 		active = false
+		$SFX.play()
 		$Sprite.frame = 1
-		body.learn_frequency("A")
+		body.unlock(unlocks)
 		$Light2D.enabled = false

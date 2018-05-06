@@ -51,7 +51,9 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 16 )
 
-[node name="VerticalDoor" type="KinematicBody2D"]
+[node name="VerticalDoor" type="KinematicBody2D" index="0" groups=[
+"Door",
+]]
 
 input_pickable = false
 collision_layer = 1

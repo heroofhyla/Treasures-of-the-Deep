@@ -17,5 +17,5 @@ func _ready():
 func _on_Ping_body_entered(body):
 	#print("Collision - ping")
 	#print(body.name)
-	if body.name == "VerticalDoor":
+	if body.is_in_group("Door"):
 		body.open()

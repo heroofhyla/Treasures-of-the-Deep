@@ -16,6 +16,7 @@ var health = 3
 var max_health = 3
 var ping = load("res://Entities/Ping.tscn")
 var can_ping = false
+var can_light = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -42,9 +43,13 @@ func gain_max_health(amt):
 	get_tree().call_group("HUD", "update_sub", self)
 	get_tree().call_group("HUD", "show_max_health_notice")
 
-func learn_frequency(letter):
-	get_tree().call_group("HUD", "show_learn_frequency_notice", letter)
-	can_ping = true
+func unlock(skill):
+	if skill == "Ping":
+		get_tree().call_group("HUD", "show_learn_frequency_notice", "A")
+		can_ping = true
+	if skill == "Light":
+		get_tree().call_group("HUD", "show_learn_light_notice")
+		can_light = true
 
 func game_over(anim):
 	get_tree().change_scene("res://Scenes/GameOverScene.tscn")
@@ -108,7 +113,7 @@ func _physics_process(delta):
 		$Particles2D.emitting = false
 	
 	
-	if Input.is_action_just_pressed("toggle_light"):
+	if Input.is_action_just_pressed("toggle_light") && can_light:
 		$Flashlight.enabled = !($Flashlight.enabled)
 		lit = !lit
 		if lit:

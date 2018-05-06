@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Artifact.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/artifact.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/circle-light.png" type="Texture" id=3]
+[ext_resource path="res://SFX/artifact.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 6.0
 
-[node name="Artifact" type="Area2D" index="0"]
+[node name="Artifact" type="Area2D"]
 
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )
@@ -19,6 +20,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+unlocks = "Ping"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -57,6 +59,14 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Transform" ]
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_Artifact_body_entered"]
 

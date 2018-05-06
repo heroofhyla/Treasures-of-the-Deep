@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floodlight.png-bb3348e6233ad0f1bc8e9fb655442313.stex"
+path="res://.import/eye_monster.png-f6af4651f294994cdbbc5adf414c8331.stex"
 
 [deps]
 
-source_file="res://Sprites/floodlight.png"
-source_md5="b1e66b42fe37a629b3a352b8c56e4db6"
+source_file="res://Sprites/eye_monster.png"
+source_md5="0e3ea8f976d09d30ca4a6fa444ab07af"
 
-dest_files=[ "res://.import/floodlight.png-bb3348e6233ad0f1bc8e9fb655442313.stex" ]
-dest_md5="259b4257c3bc653fb055fdcb695e8700"
+dest_files=[ "res://.import/eye_monster.png-f6af4651f294994cdbbc5adf414c8331.stex" ]
+dest_md5="ea7192125373c6dd5aac0cc5035a69d2"
 
 [params]
 
