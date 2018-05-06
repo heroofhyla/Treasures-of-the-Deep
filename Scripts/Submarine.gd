@@ -14,6 +14,8 @@ var last_pos = Vector2()
 var facing = 1
 var health = 3
 var max_health = 3
+var ping = load("res://Entities/Ping.tscn")
+var can_ping = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -26,23 +28,23 @@ func die():
 	$AnimationPlayer.connect("animation_finished",self,"game_over")
 
 func gain_health(amt):
-	print("Got a health pickup")
 	health += amt
 	health = min(health, max_health)
 	var anim = $AnimationPlayer.assigned_animation
-	print("Current anim: " + str(anim))
 	$AnimationPlayer.queue("Flash")
 	$AnimationPlayer.queue(anim)
 	get_tree().call_group("HUD", "update_sub", self)
 	
 
 func gain_max_health(amt):
-	print("Got a max health pickup")
 	max_health += amt
 	health = max_health
 	get_tree().call_group("HUD", "update_sub", self)
 	get_tree().call_group("HUD", "show_max_health_notice")
 
+func learn_frequency(letter):
+	get_tree().call_group("HUD", "show_learn_frequency_notice", letter)
+	can_ping = true
 
 func game_over(anim):
 	get_tree().change_scene("res://Scenes/GameOverScene.tscn")
@@ -114,6 +116,10 @@ func _physics_process(delta):
 		else:
 			$AnimationPlayer.queue("Unlit")
 	
+	if Input.is_action_just_pressed("sonar_ping") && can_ping:
+		var inst = ping.instance()
+		inst.position = position
+		get_parent().add_child(inst)
 	
 	
 #func _process(delta):

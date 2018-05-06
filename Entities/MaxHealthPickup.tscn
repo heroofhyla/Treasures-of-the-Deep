@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0, 2.0, 2.0, 1.0, 0.0, -1.0, -2.0, -2.0, -1.0 ]
 }
 
-[node name="HealthPickup" type="Area2D" index="0"]
+[node name="MaxHealthPickup" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

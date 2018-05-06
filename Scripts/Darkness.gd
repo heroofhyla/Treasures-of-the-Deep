@@ -11,7 +11,7 @@ func _ready():
 	self.visible = true
 
 func _process(delta):
-	level = min(256/ camera.global_position.y, 1)
+	level = min(64/ camera.global_position.y, 1)
 	color.r = level
 	color.g = level
 	color.b = level

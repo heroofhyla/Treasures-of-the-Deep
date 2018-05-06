@@ -3,7 +3,7 @@ extends Area2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var enabled = true
+var active = true
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -16,10 +16,9 @@ func _ready():
 #	pass
 
 
-func _on_HealthPickup_body_entered(body):
-	if body.name == "Submarine" && enabled:
-		body.gain_health(1)
-		enabled = false
-		visible = false
-		$SFX.play()
-		$SFX.connect("finished",self,"queue_free")
+func _on_Artifact_body_entered(body):
+	if body.name == "Submarine" && active:
+		active = false
+		$Sprite.frame = 1
+		body.learn_frequency("A")
+		$Light2D.enabled = false

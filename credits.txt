@@ -23,3 +23,7 @@ The following 3 sounds were used to assemble "construction.ogg":
 "Depth Bombs" ZeSoundResearchInc (freesound.org)
 Public Domain
 https://creativecommons.org/publicdomain/zero/1.0/
+
+"Sonar Ping" digitalfishmusic (freesound.org)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/

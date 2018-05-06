@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ping.ogg-3a794d2187bddaae2101b58925ee2c04.oggstr"
+
+[deps]
+
+source_file="res://SFX/ping.ogg"
+source_md5="50dc55ca6f4eee79e643fe7868a46389"
+
+dest_files=[ "res://.import/ping.ogg-3a794d2187bddaae2101b58925ee2c04.oggstr" ]
+dest_md5="6263256e79a47792f18cbb0ed74b45b9"
+
+[params]
+
+loop=false
+loop_offset=0

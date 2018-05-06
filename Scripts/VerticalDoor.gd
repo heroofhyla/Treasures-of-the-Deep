@@ -1,9 +1,9 @@
-extends Area2D
+extends KinematicBody2D
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var enabled = true
+var open = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -15,11 +15,12 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+func open():
+	if !open:
+		$AnimationPlayer.queue("Open")
+		$CollisionShape2D.disabled = true
+		open = true
 
-func _on_HealthPickup_body_entered(body):
-	if body.name == "Submarine" && enabled:
-		body.gain_health(1)
-		enabled = false
-		visible = false
-		$SFX.play()
-		$SFX.connect("finished",self,"queue_free")
+
+func _on_Area2D_area_entered(area):
+	print(area.name)

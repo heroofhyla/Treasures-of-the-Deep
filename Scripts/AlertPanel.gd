@@ -1,4 +1,4 @@
-extends Panel
+extends Sprite
 
 # class member variables go here, for example:
 # var a = 2
@@ -10,7 +10,12 @@ func _ready():
 	pass
 
 func show_max_health_notice():
-	print("Showing max health notice")
+	$TextContainer/Text.text = "Hull upgrade acquired"
+	visible = true
+	get_tree().paused = true
+
+func show_learn_frequency_notice(letter):
+	$TextContainer/Text.text = "Learned authorization frequency " + letter
 	visible = true
 	get_tree().paused = true
 

@@ -3,6 +3,7 @@ extends StaticBody2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var armed = true
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -19,7 +20,8 @@ func erase_self(arg):
 	queue_free()
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Submarine":
+	if body.name == "Submarine" && armed:
+		armed = false
 		body.damage(1)
 		var dir_to = (body.position - position).normalized()
 		body.velocity = 100 * dir_to

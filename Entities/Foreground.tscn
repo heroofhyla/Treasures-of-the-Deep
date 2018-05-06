@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/bubbles_2.png" type="Texture" id=1]
 [ext_resource path="res://Entities/Shadow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=3]
-[ext_resource path="res://scripts/AlertPanel.gd" type="Script" id=4]
-[ext_resource path="res://Fonts/mplus-1mn-regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/message_box.png" type="Texture" id=4]
+[ext_resource path="res://scripts/AlertPanel.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/mplus-1mn-regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 36
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Foreground" type="ParallaxBackground"]
@@ -76,32 +77,19 @@ size_flags_vertical = 1
 script = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Theme" ]
 
-[node name="AlertPanel" type="Panel" parent="HUD" index="1" groups=[
+[node name="AlertPanel" type="Sprite" parent="HUD" index="1" groups=[
 "HUD",
 ]]
 
 pause_mode = 2
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -444.0
-margin_top = -272.0
-margin_right = -270.0
-margin_bottom = -215.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-script = ExtResource( 4 )
-_sections_unfolded = [ "Anchor", "Hint", "Pause", "Rect", "Visibility" ]
+texture = ExtResource( 4 )
+offset = Vector2( 120, 80 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Anchor", "Hint", "Offset", "Pause", "Rect", "Visibility" ]
 
 [node name="TextContainer" type="Node2D" parent="HUD/AlertPanel" index="0"]
 
-position = Vector2( 11, 18 )
 scale = Vector2( 0.25, 0.25 )
 _sections_unfolded = [ "Transform" ]
 
@@ -111,9 +99,10 @@ anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = -32.0
-margin_right = 584.0
-margin_bottom = 57.0
+margin_left = 142.0
+margin_top = 285.0
+margin_right = 758.0
+margin_bottom = 342.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
