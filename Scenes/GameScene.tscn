@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Entities/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilesets/seafloor.tres" type="TileSet" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://Entities/Submarine.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Entities/Shadow.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Entities/Foreground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entities/HealthPickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entities/MaxHealthPickup.tscn" type="PackedScene" id=9]
 
-[node name="scene" type="Node2D"]
+[node name="scene" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -69,7 +71,7 @@ __meta__ = {
 
 stream = ExtResource( 3 )
 volume_db = 0.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 
@@ -201,5 +203,21 @@ editor_draw_drag_margin = false
 [node name="Mine24" parent="." index="30" instance=ExtResource( 4 )]
 
 position = Vector2( 55.9328, 78.4334 )
+
+[node name="HealthPickup" parent="." index="31" instance=ExtResource( 8 )]
+
+position = Vector2( 908.734, 939.839 )
+
+[node name="HealthPickup2" parent="." index="32" instance=ExtResource( 8 )]
+
+position = Vector2( 582.115, 868.977 )
+
+[node name="HealthPickup3" parent="." index="33" instance=ExtResource( 9 )]
+
+position = Vector2( 753.442, 935.088 )
+
+[node name="HealthPickup4" parent="." index="34" instance=ExtResource( 9 )]
+
+position = Vector2( 241.555, 927.196 )
 
 

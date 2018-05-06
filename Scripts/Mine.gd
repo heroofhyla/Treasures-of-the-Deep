@@ -3,6 +3,7 @@ extends StaticBody2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -24,5 +25,8 @@ func _on_Area2D_body_entered(body):
 		body.velocity = 100 * dir_to
 		print("BOOM!" + str(dir_to))
 		$AnimationPlayer.play("Explosion")
-		$AnimationPlayer.connect("animation_finished",self,"erase_self")
+		
+		$SFX.play()
+		#$AnimationPlayer.connect("animation_finished",self,"erase_self")
+		$SFX.connect("finished",self,"queue_free")
 		#queue_free()

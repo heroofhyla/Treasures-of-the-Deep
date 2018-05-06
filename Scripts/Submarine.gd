@@ -25,6 +25,25 @@ func die():
 	$AnimationPlayer.play("Explosion")
 	$AnimationPlayer.connect("animation_finished",self,"game_over")
 
+func gain_health(amt):
+	print("Got a health pickup")
+	health += amt
+	health = min(health, max_health)
+	var anim = $AnimationPlayer.assigned_animation
+	print("Current anim: " + str(anim))
+	$AnimationPlayer.queue("Flash")
+	$AnimationPlayer.queue(anim)
+	get_tree().call_group("HUD", "update_sub", self)
+	
+
+func gain_max_health(amt):
+	print("Got a max health pickup")
+	max_health += amt
+	health = max_health
+	get_tree().call_group("HUD", "update_sub", self)
+	get_tree().call_group("HUD", "show_max_health_notice")
+
+
 func game_over(anim):
 	get_tree().change_scene("res://Scenes/GameOverScene.tscn")
 
@@ -70,7 +89,7 @@ func _physics_process(delta):
 			facing = input.x
 			$Sprite.scale.x = facing
 			$Particles2D.position.x *= -1
-			$Light2D.scale.x *= -1
+			$Flashlight.scale.x *= -1
 		
 	input = input.normalized() * (ACCEL * delta)
 	velocity += input
@@ -88,12 +107,12 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("toggle_light"):
-		$Light2D.enabled = !($Light2D.enabled)
+		$Flashlight.enabled = !($Flashlight.enabled)
 		lit = !lit
 		if lit:
-			$AnimationPlayer.play("Lit")
+			$AnimationPlayer.queue("Lit")
 		else:
-			$AnimationPlayer.play("Unlit")
+			$AnimationPlayer.queue("Unlit")
 	
 	
 	

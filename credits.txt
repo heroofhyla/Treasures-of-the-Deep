@@ -1,4 +1,25 @@
+##MUSIC##
+
 "Echoes of Time" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0 License
 http://creativecommons.org/licenses/by/3.0/
 
+
+##SOUND EFFECTS##
+
+The following 3 sounds were used to assemble "construction.ogg":
+
+    "Drill" GowlerMusic (gowlermusic.com)
+    Licenced under Creative Commons: By Attribution 3.0 License
+    http://creativecommons.org/licenses/by/3.0/
+
+    "Hammering Nails, Close, A" InspectorJ (freesound.org)
+    Licensed under Creative Commons: By Attribution 3.0 License
+
+    "Socket Wrench" xxqmanxx (freesound.org)
+    Public Domain
+    https://creativecommons.org/publicdomain/zero/1.0/
+
+"Depth Bombs" ZeSoundResearchInc (freesound.org)
+Public Domain
+https://creativecommons.org/publicdomain/zero/1.0/

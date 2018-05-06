@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Submarine.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/submarine.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/single-bubble.png" type="Texture" id=3]
 [ext_resource path="res://Animations/Explosion.tres" type="Animation" id=4]
 [ext_resource path="res://Sprites/floodlight.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/circle-light.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -51,10 +52,41 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Emission Shape", "Gravity", "Initial Velocity", "Spread", "Trail" ]
 
+[sub_resource type="Animation" id=5]
+
+resource_name = "Flash"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate:r")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 3.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate:g")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 3.0, 1.0 ]
+}
+
 [sub_resource type="Animation" id=3]
 
 resource_name = "Lit"
-length = 1.0
+length = 0.01
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -73,7 +105,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 
 resource_name = "Unlit"
-length = 1.0
+length = 0.01
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -105,8 +137,7 @@ FRICTION = 50
 
 texture = ExtResource( 2 )
 vframes = 2
-frame = 1
-_sections_unfolded = [ "Animation", "Offset", "Region" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -147,19 +178,20 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Explosion = ExtResource( 4 )
+anims/Flash = SubResource( 5 )
 anims/Lit = SubResource( 3 )
 anims/Unlit = SubResource( 4 )
 blend_times = [  ]
 
-[node name="Light2D" type="Light2D" parent="." index="4"]
+[node name="Flashlight" type="Light2D" parent="." index="4"]
 
 enabled = false
 editor_only = false
 texture = ExtResource( 5 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
-color = Color( 0.925781, 0.791864, 0.0687103, 1 )
-energy = 0.6
+color = Color( 0.929688, 0.892006, 0.326843, 1 )
+energy = 0.5
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -174,6 +206,30 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
-_sections_unfolded = [ "Range" ]
+_sections_unfolded = [ "Range", "Transform" ]
+
+[node name="Light2D" type="Light2D" parent="." index="5"]
+
+enabled = false
+editor_only = false
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
 
 
