@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/bubbles_2.png" type="Texture" id=1]
 [ext_resource path="res://Entities/Shadow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=3]
 
-[node name="Foreground" type="ParallaxBackground" index="0"]
+[node name="Foreground" type="ParallaxBackground"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -37,5 +38,32 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 [node name="CanvasModulate" parent="." index="1" instance=ExtResource( 2 )]
 
 color = Color( 0.0411682, 0.13896, 0.277344, 1 )
+
+[node name="HUD" type="CanvasLayer" parent="." index="2"]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 4, 4 )
+transform = Transform2D( 4, 0, 0, 4, 0, 0 )
+
+[node name="HealthBar" type="Control" parent="HUD" index="0" groups=[
+"HUD",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_right = -920.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Theme" ]
 
 

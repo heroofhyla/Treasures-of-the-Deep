@@ -12,11 +12,27 @@ export var FRICTION = 50
 var lit = false
 var last_pos = Vector2()
 var facing = 1
+var health = 3
+var max_health = 3
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
+
+func die():
+	$Sprite.vframes = 1
+	$AnimationPlayer.play("Explosion")
+	$AnimationPlayer.connect("animation_finished",self,"game_over")
+
+func game_over(anim):
+	get_tree().change_scene("res://Scenes/GameOverScene.tscn")
+
+func damage(amt):
+	health -= amt
+	get_tree().call_group("HUD", "update_sub", self)
+	if health <= 0:
+		die()
 
 func _physics_process(delta):
 	

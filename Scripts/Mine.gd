@@ -19,6 +19,7 @@ func erase_self(arg):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Submarine":
+		body.damage(1)
 		var dir_to = (body.position - position).normalized()
 		body.velocity = 100 * dir_to
 		print("BOOM!" + str(dir_to))

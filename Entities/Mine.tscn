@@ -94,7 +94,7 @@ tracks/5/keys = {
 "values": [ Color( 0.679688, 0.0265503, 0.0265503, 1 ) ]
 }
 
-[node name="Mine" type="StaticBody2D" index="0"]
+[node name="Mine" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
