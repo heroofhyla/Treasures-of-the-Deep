@@ -51,7 +51,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 16 )
 
-[node name="VerticalDoor" type="KinematicBody2D" index="0" groups=[
+[node name="VerticalDoor" type="KinematicBody2D" groups=[
 "Door",
 ]]
 
@@ -98,7 +98,5 @@ audio_bus_name = "Master"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 5 )
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 
 

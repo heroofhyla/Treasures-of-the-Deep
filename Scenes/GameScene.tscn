@@ -375,7 +375,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( 496, 1357.97 )
 rotation = 1.5708
-_sections_unfolded = [ "Transform" ]
 access_level = "b"
 
 [node name="GameEnd" type="Area2D" parent="." index="16"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/TitleScene.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/title_screen.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/big_window.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/mplus-1mn-regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 14
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="TitleScene" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="title_screen" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="big_window" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 4, 4 )
+z_index = 1
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Node2D" type="Node2D" parent="big_window" index="0"]
+
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="big_window/Node2D" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 928.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "##MUSIC##
+
+\"Echoes of Time\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+
+##SOUND EFFECTS##
+
+\"Drill\" GowlerMusic (gowlermusic.com)                          \"Depth Bombs\" ZeSoundResearchInc (freesound.org)
+Licenced under Creative Commons: By Attribution 3.0 License    Public Domain
+http://creativecommons.org/licenses/by/3.0/                    https://creativecommons.org/publicdomain/zero/1.0/
+                                                               
+\"Hammering Nails, Close, A\" InspectorJ (freesound.org)         \"Sonar Ping\" digitalfishmusic (freesound.org)
+Licensed under Creative Commons: By Attribution 3.0 License    Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/                    http://creativecommons.org/licenses/by/3.0/
+
+\"Socket Wrench\" xxqmanxx (freesound.org)
+Public Domain
+https://creativecommons.org/publicdomain/zero/1.0/
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+
