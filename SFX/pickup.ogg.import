@@ -7,10 +7,10 @@ path="res://.import/pickup.ogg-d5459bf798fc8434e0e832364af1dd37.oggstr"
 [deps]
 
 source_file="res://SFX/pickup.ogg"
-source_md5="fe78189f132e0585653d534c8f27141b"
+source_md5="2a59c1cbfb51484428e544b2c7eaa5b4"
 
 dest_files=[ "res://.import/pickup.ogg-d5459bf798fc8434e0e832364af1dd37.oggstr" ]
-dest_md5="ffb63077ae4736992ffa92c43c6fdef0"
+dest_md5="319fe438e3b073ffd5aa1ab5c0a4d521"
 
 [params]
 

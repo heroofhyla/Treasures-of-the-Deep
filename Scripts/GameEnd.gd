@@ -1,10 +1,8 @@
-extends KinematicBody2D
+extends Area2D
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var open = false
-export var access_level = "a"
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -16,12 +14,8 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func open():
-	if !open:
-		$AnimationPlayer.queue("Open")
-		$CollisionShape2D.disabled = true
-		open = true
 
-
-func _on_Area2D_area_entered(area):
-	print(area.name)
+func _on_GameEnd_body_entered(body):
+	if body.name == "Submarine":
+		get_tree().call_group("HUD", "game_end")
+		queue_free()

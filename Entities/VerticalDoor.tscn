@@ -55,11 +55,14 @@ extents = Vector2( 10, 16 )
 "Door",
 ]]
 
+z_index = -1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+access_level = "a"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

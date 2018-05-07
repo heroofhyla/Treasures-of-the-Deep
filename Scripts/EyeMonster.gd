@@ -3,8 +3,7 @@ extends KinematicBody2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var open = false
-export var access_level = "a"
+var flinching = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -16,12 +15,16 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func open():
-	if !open:
-		$AnimationPlayer.queue("Open")
-		$CollisionShape2D.disabled = true
-		open = true
-
 
 func _on_Area2D_area_entered(area):
-	print(area.name)
+	if area.name == "LightArea" && !flinching:
+		$AnimationPlayer.queue("Flinch")
+		flinching = true
+
+
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	$AnimationPlayer.queue("Idle")
+	flinching = false
+	

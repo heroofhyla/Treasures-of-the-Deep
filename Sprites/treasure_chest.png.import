@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eye_monster.png-f6af4651f294994cdbbc5adf414c8331.stex"
+path="res://.import/treasure_chest.png-8e9242dc569816f3b7b5fa69a911c29a.stex"
 
 [deps]
 
-source_file="res://Sprites/eye_monster.png"
-source_md5="ff29c53d42fa60641e24c639e97b404a"
+source_file="res://Sprites/treasure_chest.png"
+source_md5="2ced032ec3bad451d38a57179bf5f505"
 
-dest_files=[ "res://.import/eye_monster.png-f6af4651f294994cdbbc5adf414c8331.stex" ]
-dest_md5="ce432c056f4e2a78887c6fec37a7f89e"
+dest_files=[ "res://.import/treasure_chest.png-8e9242dc569816f3b7b5fa69a911c29a.stex" ]
+dest_md5="dbbebc0d80c26bf77db5c17285ff6fb5"
 
 [params]
 

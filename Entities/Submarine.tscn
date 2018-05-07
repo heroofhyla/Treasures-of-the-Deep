@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Submarine.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/submarine.png" type="Texture" id=2]
@@ -121,6 +121,11 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 50, 10 )
+
 [node name="Submarine" type="KinematicBody2D"]
 
 input_pickable = false
@@ -231,5 +236,23 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+
+[node name="LightArea" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightArea" index="0"]
+
+position = Vector2( 50.2221, 0.291985 )
+shape = SubResource( 6 )
+disabled = true
+_sections_unfolded = [ "Transform" ]
 
 

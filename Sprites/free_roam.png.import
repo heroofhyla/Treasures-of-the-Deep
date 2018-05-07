@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/eye_monster.png-f6af4651f294994cdbbc5adf414c8331.stex"
+path="res://.import/free_roam.png-f3e9bb7776309a86643bf57bd992b948.stex"
 
 [deps]
 
-source_file="res://Sprites/eye_monster.png"
-source_md5="ff29c53d42fa60641e24c639e97b404a"
+source_file="res://Sprites/free_roam.png"
+source_md5="e527bad64d56e11e59838acbefcf5d9a"
 
-dest_files=[ "res://.import/eye_monster.png-f6af4651f294994cdbbc5adf414c8331.stex" ]
-dest_md5="ce432c056f4e2a78887c6fec37a7f89e"
+dest_files=[ "res://.import/free_roam.png-f3e9bb7776309a86643bf57bd992b948.stex" ]
+dest_md5="98b091ba4ea6b44ac5b1a495ad12372b"
 
 [params]
 

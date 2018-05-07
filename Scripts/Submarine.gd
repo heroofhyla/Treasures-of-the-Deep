@@ -17,6 +17,7 @@ var max_health = 3
 var ping = load("res://Entities/Ping.tscn")
 var can_ping = false
 var can_light = false
+var code_b = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -50,6 +51,9 @@ func unlock(skill):
 	if skill == "Light":
 		get_tree().call_group("HUD", "show_learn_light_notice")
 		can_light = true
+	if skill == "CodeB":
+		get_tree().call_group("HUD", "show_learn_frequency_notice", "B")
+		code_b = true
 
 func game_over(anim):
 	get_tree().change_scene("res://Scenes/GameOverScene.tscn")
@@ -97,6 +101,7 @@ func _physics_process(delta):
 			$Sprite.scale.x = facing
 			$Particles2D.position.x *= -1
 			$Flashlight.scale.x *= -1
+			$LightArea.scale.x *= -1
 		
 	input = input.normalized() * (ACCEL * delta)
 	velocity += input
@@ -115,6 +120,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("toggle_light") && can_light:
 		$Flashlight.enabled = !($Flashlight.enabled)
+		$LightArea/CollisionShape2D.disabled = ! $LightArea/CollisionShape2D.disabled
 		lit = !lit
 		if lit:
 			$AnimationPlayer.queue("Lit")
@@ -124,6 +130,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("sonar_ping") && can_ping:
 		var inst = ping.instance()
 		inst.position = position
+		inst.code_b = code_b
+		print(inst.code_b)
 		get_parent().add_child(inst)
 	
 	
