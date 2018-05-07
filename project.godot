@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Treasure of the Deep"
+config/name="The Deep"
 run/main_scene="res://Scenes/TitleScene.tscn"
 config/icon="res://icon.png"
 
@@ -18,6 +18,8 @@ config/icon="res://icon.png"
 
 window/size/width=960
 window/size/height=640
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
