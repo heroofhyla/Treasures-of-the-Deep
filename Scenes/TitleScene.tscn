@@ -26,6 +26,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="big_window" type="Sprite" parent="." index="1"]
 
+visible = false
 scale = Vector2( 4, 4 )
 z_index = 1
 texture = ExtResource( 3 )
@@ -54,7 +55,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "##MUSIC##
+text = "Art, Programming, and some SFX by Michael Stroud
+
+##MUSIC##
 
 \"Echoes of Time\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0 License
