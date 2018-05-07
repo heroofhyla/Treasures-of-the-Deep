@@ -4,7 +4,7 @@
 [ext_resource path="res://Entities/Shadow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/HealthBar.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/message_box.png" type="Texture" id=4]
-[ext_resource path="res://scripts/AlertPanel.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/AlertPanel.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/mplus-1mn-regular.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -15,7 +15,7 @@ use_filter = true
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="Foreground" type="ParallaxBackground"]
+[node name="Foreground" type="ParallaxBackground" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
